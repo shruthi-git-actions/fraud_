@@ -23,5 +23,9 @@ jobs:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS }}
         run: |
           pip install -r requirements.txt
-	  # running
-	  dvc repro Training
+
+          # Pull latest data from remote
+          #dvc pull -r mlops-org
+
+          # Reproduce pipeline if any changes detected in dependencies
+          dvc repro Training
